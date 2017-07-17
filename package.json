@@ -1,0 +1,22 @@
+{
+  "name": "guardian-bot",
+  "version": "1.0.0",
+  "description": "Guardian Bot for basic moderation",
+  "main": "bot.js",
+  "scripts": {
+    "test": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Odinthewanderer/guardian-bot.git"
+  },
+  "author": "Odin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Odinthewanderer/guardian-bot/issues"
+  },
+  "homepage": "https://github.com/Odinthewanderer/guardian-bot#readme",
+  "dependencies": {
+    "komada": "^0.19.7"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "prefix": {
+    "data": "+",
+    "type": "String",
+    "possibles": []
+  },
+  "disabledCommands": {
+    "data": [],
+    "type": "Array"
+  },
+  "modRole": {
+    "data": "Mods",
+    "type": "String",
+    "possibles": []
+  },
+  "adminRole": {
+    "data": "Devs",
+    "type": "String",
+    "possibles": []
+  },
+  "lang": {
+    "data": "en",
+    "type": "String",
+    "possibles": []
+  },
+  "modLog": {
+    "data": "modlogs",
+    "type": "String",
+    "possibles": []
+  },
+  "modLog-embed": {
+    "data": true,
+    "type": "Boolean"
+  },
+  "deleteCommand": {
+    "data": true,
+    "type": "Boolean"
+  }
+}
