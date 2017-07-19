@@ -1,17 +1,13 @@
-exports.init = (client) => {
-};
-
 exports.run = (client, msg, [numMessages]) => {
-
-  let messagecount = parseInt(msg);
+  const messagecount = parseInt(numMessages);
   msg.channel.fetchMessages({
-    limit: messagecount
+    limit: messagecount,
   }).then(messages => msg.channel.bulkDelete(messages));
 };
 
 exports.conf = {
   enabled: true,
-  runIn: ["text"],
+  runIn: ['text'],
   aliases: [],
   permLevel: 10,
   botPerms: [],
@@ -19,9 +15,9 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "purge",
-  description: "Purges X amount of messages from channel.",
-  usage: "<numMessages:int>",
-  usageDelim: " ",
-  extendedHelp: "",
+  name: 'purge',
+  description: 'Purges X amount of messages from channel.',
+  usage: '<numMessages:int>',
+  usageDelim: ' ',
+  extendedHelp: '',
 };

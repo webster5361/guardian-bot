@@ -1,8 +1,5 @@
-exports.init = (client) => {
-};
-
 exports.run = (client, msg, [duration]) => {
-  reason = reason.join(" ");
+  // reason = reason.join(" ");
 
   // if (!client.lockit) client.lockit = [];
   // let time = args.join(' ');

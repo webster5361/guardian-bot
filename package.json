@@ -18,17 +18,14 @@
   "homepage": "https://github.com/Odinthewanderer/guardian-bot#readme",
   "dependencies": {
     "chalk": "^2.0.1",
-    "dotenv": "^4.0.0",
-    "eslint": "^4.2.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.7.0",
     "komada": "^0.19.7",
     "mkdirp": "^0.5.1",
-    "moment": "^2.18.1",
-    "winston": "^2.3.1",
-    "write": "^1.0.3"
+    "moment": "^2.18.1"
   },
   "devDependencies": {
-    "coveralls": "^2.13.1"
+    "coveralls": "^2.13.1",
+    "eslint": "^4.2.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0"
   }
 }

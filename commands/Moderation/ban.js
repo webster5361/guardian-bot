@@ -1,6 +1,3 @@
-exports.init = (client) => {
-};
-
 exports.run = (client, msg, [member, ...reason]) => {
   reason = reason.join(' ');
 
