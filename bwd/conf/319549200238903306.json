@@ -35,5 +35,10 @@
   "deleteCommand": {
     "data": true,
     "type": "Boolean"
+  },
+  "logDir": {
+    "data": "log/",
+    "type": "String",
+    "possibles": []
   }
 }

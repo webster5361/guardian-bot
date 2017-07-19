@@ -3,3 +3,6 @@
 
 # Specific Files
 lib/config.json
+
+# Log files
+log/*.log
