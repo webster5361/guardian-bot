@@ -50,7 +50,7 @@ exports.run = (client, msg, [duration]) => {
 
 exports.conf = {
   enabled: true,
-  runIn: ["text"],
+  runIn: ['text'],
   aliases: [],
   permLevel: 10,
   botPerms: [],
@@ -58,9 +58,9 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "lockdown",
-  description: "Locks down a channel for a given time period.",
-  usage: "[duration:str]",
-  usageDelim: " ",
-  extendedHelp: "",
+  name: 'lockdown',
+  description: 'Locks down a channel for a given time period.',
+  usage: '[duration:str]',
+  usageDelim: ' ',
+  extendedHelp: '',
 };

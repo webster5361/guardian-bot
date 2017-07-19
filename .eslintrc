@@ -11,7 +11,7 @@
     "no-console": "off",
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "linebreak-style": "off",
-    "quotes": ["warn", "double"],
+    "quotes": ["warn", "single"],
     "semi": ["warn", "always"],
     "no-param-reassign": "off",
     "no-shadow": "warn",
