@@ -27,5 +27,8 @@
     "moment": "^2.18.1",
     "winston": "^2.3.1",
     "write": "^1.0.3"
+  },
+  "devDependencies": {
+    "coveralls": "^2.13.1"
   }
 }
