@@ -2,8 +2,6 @@ exports.run = (client, guild) => {
   const logMessage = `GUARDIAN has joined a new guild: ${guild.name} [ ${guild.id} ]`;
   client.funcs.log(`${logMessage}`, 'logMessage');
 
-  // client.config.addKey('delete_mod_message', '1', 'String');
-
   client.funcs.write_log(`${logMessage}`);
 
   const guildConfigs = client.guildConfs.get(guild.id);
