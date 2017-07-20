@@ -26,6 +26,7 @@ exports.run = (client, msg, [member, ...reason]) => {
         client.funcs.write_log(client, logDir, logger);
         client.funcs.log(logger, 'warn');
         member.send(`You have been muted by \`${msg.author.username}\` in the \`${msg.guild.name}\` Discord server for the following reason:\n\n\`\`\`diff\n- ${reason} -\`\`\`\nRepeated violations will result in your removal from this server.\n\nFor all inquiries about this matter, please contact a Moderator and reference: \`Case# ${messageID}\``);
+        client.funcs.sqlLog(client, msg.guild.id, messageID, member.id, member.user.tag, msg.author.id, msg.author.tag, 'Mute', reason);
       });
   } catch (err) { console.log(err); }
   client.funcs.modlogs.post(client, msg.guild, embed).catch(console.error);

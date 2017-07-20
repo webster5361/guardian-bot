@@ -27,6 +27,7 @@ exports.run = (client, msg, [member, ...reason]) => {
           msg.channel.send('Kick successful!');
           msg.guild.member(member).kick();
         }, 250);
+        client.funcs.sqlLog(client, msg.guild.id, messageID, member.id, member.user.tag, msg.author.id, msg.author.tag, 'Kick', reason);
       });
   } catch (err) { client.funcs.log(err, 'error'); }
   client.funcs.modlogs.post(client, msg.guild, embed).catch(console.error);

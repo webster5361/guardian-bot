@@ -26,6 +26,7 @@ exports.run = (client, msg, [member, ...reason]) => {
           msg.channel.send('Ban successful!');
           msg.guild.ban(member, 7);
         }, 250);
+        client.funcs.sqlLog(client, msg.guild.id, messageID, member.id, member.user.tag, msg.author.id, msg.author.tag, 'Ban', reason);
       });
   } catch (err) { client.funcs.log(err, 'error'); }
   client.funcs.modlogs.post(client, msg.guild, embed).catch(console.error);

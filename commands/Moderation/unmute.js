@@ -27,6 +27,7 @@ exports.run = (client, msg, [member, ...reason]) => {
         client.funcs.write_log(client, logDir, logger);
         client.funcs.log(logger, 'warn');
         member.send(`You have been unmuted by \`${msg.author.username}\` in the \`${msg.guild.name}\` Discord server for the following reason:\n\n\`\`\`diff\n- ${reason} -\`\`\`\nYou can now speak again in the channels. BE NICE!\n\nFor all inquiries about this matter, please contact a Moderator and reference: \`Case# ${messageID}\``);
+        client.funcs.sqlLog(client, msg.guild.id, messageID, member.id, member.user.tag, msg.author.id, msg.author.tag, 'Unmute', reason);
       });
   } catch (err) { console.log(err); }
   client.funcs.modlogs.post(client, msg.guild, embed).catch(console.error);
