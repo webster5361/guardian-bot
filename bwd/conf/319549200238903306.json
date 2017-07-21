@@ -30,14 +30,36 @@
   },
   "modLog-embed": {
     "data": true,
-    "type": "Boolean"
+    "type": "Boolean",
+    "possibles": []
   },
   "deleteCommand": {
     "data": true,
-    "type": "Boolean"
+    "type": "Boolean",
+    "possibles": []
   },
   "logDir": {
     "data": "log/",
+    "type": "String",
+    "possibles": []
+  },
+  "channel_newMember": {
+    "data": "modlogs",
+    "type": "String",
+    "possibles": []
+  },
+  "channel_memberLeft": {
+    "data": "modlogs",
+    "type": "String",
+    "possibles": []
+  },
+  "channel_messageDelete": {
+    "data": "modlogs",
+    "type": "String",
+    "possibles": []
+  },
+  "role_trusted": {
+    "data": "verified",
     "type": "String",
     "possibles": []
   }

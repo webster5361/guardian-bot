@@ -22,9 +22,9 @@ exports.run = (client, msg, [member, ...reason]) => {
         lastMessageID = chkContent.match(/Case #(\d+)/i)[1];
         let messageID = parseInt(lastMessageID);
         messageID += 1;
-        const logger = `CASE# ${messageID} :: ${member.user.username} has been unmuted by ${msg.author.username} in the ${msg.guild.name} for the following reason: ${reason}`;
+        const logger = `CASE# ${messageID} :: ${member.user.tag} [ ${member.id} ] has been unmuted by ${msg.author.username} [ ${msg.author.id} ] in the ${msg.guild.name} for the following reason: ${reason}`;
         const logDir = client.guildConfs.get(msg.guild.id).logDir.data;
-        client.funcs.write_log(client, logDir, logger);
+        client.funcs.write_log(client, logDir, msg.guild.id, logger);
         client.funcs.log(logger, 'warn');
         member.send(`You have been unmuted by \`${msg.author.username}\` in the \`${msg.guild.name}\` Discord server for the following reason:\n\n\`\`\`diff\n- ${reason} -\`\`\`\nYou can now speak again in the channels. BE NICE!\n\nFor all inquiries about this matter, please contact a Moderator and reference: \`Case# ${messageID}\``);
         client.funcs.sqlLog(client, msg.guild.id, messageID, member.id, member.user.tag, msg.author.id, msg.author.tag, 'Unmute', reason);

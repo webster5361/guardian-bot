@@ -24,9 +24,9 @@ exports.run = (client, msg, [member, ...reason]) => {
           lastMessageID = chkContent.match(/Case #(\d+)/i)[1];
           let messageID = parseInt(lastMessageID);
           messageID += 1;
-          const logger = `CASE# ${messageID} :: ${targetTag} has been unbanned by ${msg.author.username} in the ${msg.guild.name} for the following reason: ${reason}. -- REFERENCE [ ${caseNum} ]`;
+          const logger = `CASE# ${messageID} :: ${targetTag} [ ${targetID} ] has been unbanned by ${msg.author.username} [ ${msg.author.id} ] in the ${msg.guild.name} for the following reason: ${reason}. -- REFERENCE [ ${caseNum} ]`;
           const logDir = client.guildConfs.get(msg.guild.id).logDir.data;
-          client.funcs.write_log(client, logDir, logger);
+          client.funcs.write_log(client, logDir, msg.guild.id, logger);
           client.funcs.log(logger, 'warn');
           msg.guild.unban(member);
           msg.channel.send('Unban successful!');

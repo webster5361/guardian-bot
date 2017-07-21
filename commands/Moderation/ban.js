@@ -16,9 +16,9 @@ exports.run = (client, msg, [member, ...reason]) => {
         lastMessageID = chkContent.match(/Case #(\d+)/i)[1];
         let messageID = parseInt(lastMessageID);
         messageID += 1;
-        const logger = `CASE# ${messageID} :: ${member.user.username} has been banned by ${msg.author.username} in the ${msg.guild.name} for the following reason: ${reason}`;
+        const logger = `CASE# ${messageID} :: ${member.user.tag} [ ${member.id} ] has been banned by ${msg.author.tag} [ ]${msg.author.id} ]in the ${msg.guild.name} for the following reason: ${reason}`;
         const logDir = client.guildConfs.get(msg.guild.id).logDir.data;
-        client.funcs.write_log(client, logDir, logger);
+        client.funcs.write_log(client, logDir, msg.guild.id, logger);
         client.funcs.log(logger, 'warn');
         member.send(`You have been banned by \`${msg.author.username}\` from the \`${msg.guild.name}\` Discord server for the following reason:\n\n\`\`\`diff\n- ${reason} -\`\`\`\nThere is no reason to act like this in someone's Discord server.\n\nFor all inquiries about this matter, please contact a Moderator and reference: \`Case# ${messageID}\``);
 
