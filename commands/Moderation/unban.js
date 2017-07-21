@@ -12,6 +12,7 @@ exports.run = (client, msg, [member, ...reason]) => {
     const author = msg.author;
     const embed = client.funcs.modlogs.createUnbanEmbed(client, author, targetTag, targetID, action, reason);
     const modLog = msg.guild.channels.find(c => c.name.toLowerCase() === client.guildConfs.get(msg.guild.id).modLog.data);
+    const caseNum = data.caseNum;
     let lastMessageID = 0;
     let chkContent = '';
 
@@ -23,13 +24,12 @@ exports.run = (client, msg, [member, ...reason]) => {
           lastMessageID = chkContent.match(/Case #(\d+)/i)[1];
           let messageID = parseInt(lastMessageID);
           messageID += 1;
-          const logger = `CASE# ${messageID} :: ${targetTag} has been unbanned by ${msg.author.username} in the ${msg.guild.name} for the following reason: ${reason}`;
+          const logger = `CASE# ${messageID} :: ${targetTag} has been unbanned by ${msg.author.username} in the ${msg.guild.name} for the following reason: ${reason}. -- REFERENCE [ ${caseNum} ]`;
           const logDir = client.guildConfs.get(msg.guild.id).logDir.data;
           client.funcs.write_log(client, logDir, logger);
           client.funcs.log(logger, 'warn');
           msg.guild.unban(member);
           msg.channel.send('Unban successful!');
-          // client, guild_id, CaseNumber, v_id, v_tag, m_id, m_tag, Action, Reason
           client.funcs.sqlLog(client, msg.guild.id, messageID, targetID, targetTag, msg.author.id, msg.author.tag, 'Unban', reason);
         });
     } catch (err) { client.funcs.log(err, 'error'); }
