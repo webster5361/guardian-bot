@@ -34,6 +34,25 @@ exports.createEmbed = (client, author, target, action, reason) => {
   return embed;
 };
 
+exports.createUnbanEmbed = (client, author, targetTag, targetID, action, reason) => {
+  const embed = new client.methods.Embed();
+  const color = embedTypes.hasOwnProperty(action) ? embedTypes[action] : 0x222222;
+
+  embed
+    .setColor(color)
+    .setTitle('Case #{x}')
+    .setAuthor(`${author.username}#${author.discriminator} (${author.id})`, author.avatarURL)
+    .setTimestamp()
+    .addField('Action:', client.funcs.toTitleCase(action), true)
+    .addField('Target:', `${targetTag}`, true)
+    .setFooter(targetID)
+    .setThumbnail(client.user.avatarURL);
+  if (!!reason && reason.length > 0) {
+    embed.addField('Reason:', reason, true);
+  }
+  return embed;
+};
+
 exports.post = async (client, guild, content) => {
   return new Promise(async (resolve, reject) => {
     const modLog = guild.channels.find(c => c.name.toLowerCase() === client.guildConfs.get(guild.id).modLog.data);

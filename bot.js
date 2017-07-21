@@ -1,6 +1,7 @@
 const komada = require('komada');
 const inspect = require('util').inspect;
 const config = require('./lib/config.json');
+const Raven = require('raven');
 
 komada.start({
   botToken: config.token,
@@ -14,6 +15,7 @@ komada.start({
 });
 
 exports.run = (client, msg, [code]) => {
+  Raven.config('https://60175093096b4d24b8b303565b0e3f1f:cf927a6dc4c04f03ab9fb068bf212a17@sentry.io/194286').install();
   try {
     let evaled = eval(code);
     if (typeof evaled !== 'string') {
@@ -23,7 +25,7 @@ exports.run = (client, msg, [code]) => {
   } catch (err) {
     msg.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${
       client.funcs.clean(client, err)
-      }\n\`\`\``);
+    }\n\`\`\``);
     if (err.stack) client.funcs.log(err.stack, 'error');
   }
 };
