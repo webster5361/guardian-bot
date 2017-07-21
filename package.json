@@ -19,10 +19,13 @@
   "dependencies": {
     "chalk": "^2.0.1",
     "dateformat": "^2.0.0",
+    "fs-nextra": "^0.2.0",
     "komada": "^0.19.7",
     "mkdirp": "^0.5.1",
     "moment": "^2.18.1",
+    "path": "^0.12.7",
     "raven": "^2.1.0",
+    "sqlite": "^2.8.0",
     "sqlite3": "^3.1.8",
     "sqlstring": "^2.2.0"
   },
