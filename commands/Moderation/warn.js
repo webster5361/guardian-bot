@@ -13,7 +13,6 @@ exports.run = (client, msg, [member, ...reason]) => {
     modLog.fetchMessages({ limit: 1 })
       .then((result) => {
         const lastMessage = result.first();
-        // console.log(lastMessage);
         if (!lastMessage) {
           messageID = 1;
         } else {
@@ -22,7 +21,6 @@ exports.run = (client, msg, [member, ...reason]) => {
           messageID = parseInt(lastMessageID);
           messageID += 1;
         }
-        console.log(messageID);
         const logger = `CASE# ${messageID} :: ${member.user.tag} [ ${member.id} ] has been given a warning by ${msg.author.username} [ ${msg.author.id} ] in the ${msg.guild.name} for the following reason: ${reason}`;
         const logDir = client.guildConfs.get(msg.guild.id).logDir.data;
         client.funcs.write_log(client, logDir, msg.guild.id, logger);
