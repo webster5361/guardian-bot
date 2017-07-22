@@ -30,26 +30,19 @@
   },
   "modLog-embed": {
     "data": true,
-    "type": "Boolean",
-    "possibles": []
+    "type": "Boolean"
   },
   "deleteCommand": {
     "data": true,
-    "type": "Boolean",
-    "possibles": []
+    "type": "Boolean"
   },
   "logDir": {
     "data": "log/",
     "type": "String",
     "possibles": []
   },
-  "channel_newMember": {
-    "data": "modlogs",
-    "type": "String",
-    "possibles": []
-  },
-  "channel_memberLeft": {
-    "data": "modlogs",
+  "channel_memberLog": {
+    "data": "member-log",
     "type": "String",
     "possibles": []
   },
@@ -61,6 +54,15 @@
   "role_trusted": {
     "data": "verified",
     "type": "String",
+    "possibles": []
+  },
+  "greeting_enabled": {
+    "data": true,
+    "type": "Boolean"
+  },
+  "exit_message": {
+    "data": true,
+    "type": "Boolean",
     "possibles": []
   }
 }

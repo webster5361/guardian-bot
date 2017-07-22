@@ -16,7 +16,7 @@ exports.run = (client, msg, [member, ...reason]) => {
         lastMessageID = chkContent.match(/Case #(\d+)/i)[1];
         let messageID = parseInt(lastMessageID);
         messageID += 1;
-        const logger = `CASE# ${messageID} :: ${member.user.tag} [ ${member.id} ] has been banned by ${msg.author.tag} [ ]${msg.author.id} ]in the ${msg.guild.name} for the following reason: ${reason}`;
+        const logger = `CASE# ${messageID} :: ${member.user.tag} [ ${member.id} ] has been banned by ${msg.author.tag} [ ${msg.author.id} ] in the ${msg.guild.name} for the following reason: ${reason}`;
         const logDir = client.guildConfs.get(msg.guild.id).logDir.data;
         client.funcs.write_log(client, logDir, msg.guild.id, logger);
         client.funcs.log(logger, 'warn');
@@ -25,7 +25,7 @@ exports.run = (client, msg, [member, ...reason]) => {
         setTimeout(() => {
           msg.channel.send('Ban successful!');
           msg.guild.ban(member, 7);
-        }, 250);
+        }, 400);
         client.funcs.sqlLog(client, msg.guild.id, messageID, member.id, member.user.tag, msg.author.id, msg.author.tag, 'Ban', reason);
       });
   } catch (err) { client.funcs.log(err, 'error'); }

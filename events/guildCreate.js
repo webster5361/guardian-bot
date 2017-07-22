@@ -9,9 +9,10 @@ exports.run = (client, guild) => {
   guildConfigs.addKey('modLog', 'modlogs', 'String');
   guildConfigs.addKey('modLog-embed', 'true', 'Boolean');
   guildConfigs.addKey('logDir', 'log/', 'String');
-  guildConfigs.addKey('channel_newMember', 'new-member-stream', 'String');
-  guildConfigs.addKey('channel_memberLeft', 'member-left-stream', 'String');
+  guildConfigs.addKey('channel_memberLog', 'member-log', 'String');
   guildConfigs.addKey('channel_messageDeleted', 'message-deleted-stream', 'String');
   guildConfigs.addKey('role_mute', 'Muted', 'String');
   guildConfigs.addKey('role_trusted', 'Verified', 'String');
+  guildConfigs.addKey('greeting_enabled', 'false', 'String');
+  guildConfigs.addKey('exit_message', 'true', 'String');
 };
