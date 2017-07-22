@@ -27,3 +27,113 @@ After your repositories are installed:
 cp lib/config.json.example lib/config.json
 ```
 Now set up your config.json file as you see fit.
+
+# Command usage
+
+### admin Command
+
+This command allows you to promote/demote a user from your Admin role (specified in your config.json)
+
+```bash
+// This is to promote the user to admin
+{prefix}admin @user true
+```
+```bash
+// This is to demote the user from admin
+{prefix}admin @user false
+```
+
+### ban Command
+
+This command allows you to ban a specific user.
+
+```bash
+{prefix}ban @user put your reason here
+```
+
+### case Command
+
+This command allows you to check the details of a specific case #
+
+```bash
+{prefix}case case#
+```
+
+### check Command
+
+This command allows you to call a report that will check a user for specific infractions.
+
+```bash
+// Checks for Warning|Ban|Unmute|Mute|Kick|Unban [ CASE SENSITIVE ]
+{prefix}case @user infraction
+```
+
+### kick Command
+
+This command allows you to kick a specific user
+
+```bash
+{prefix}kick @user put your reason here
+```
+
+### moderator Command
+
+This command allows you to promote/demote a specific user from your Moderator status (defined in config.json)
+
+```bash
+// To promote the user
+{prefix}moderator @user true
+```
+
+```bash
+// To demote the user
+{prefix}moderator @user false
+```
+
+### mute Command
+
+This command allows you to mute a specific user. The muted role defined in your guild configs MUST exist.
+
+```bash
+{prefix}mute @user put reason here
+```
+
+### nick Command
+
+This allows you to quickly change a user's nickname. (leave blank to remove any nicknames).
+
+```bash
+{prefix}nick @user nickname
+```
+
+### purge Command
+
+This allows you to quickly purge X amount of messages from a given channel.
+
+```bash
+{prefix}purge numberMessages(2-100)
+```
+
+### unban Command
+
+This allows you to unban a user. Requires a user resolvable object (userID).
+
+```bash
+{prefix}unban userID put reason here
+```
+
+### unmute Command
+
+This allows you to remove the Muted role from a given user.
+
+```bash
+{prefix}unmute @user put reason here
+```
+
+### warn Command
+
+This allows you to Warn a user for a given reason.
+
+```bash
+{prefix}warn @user put reason here
+```
