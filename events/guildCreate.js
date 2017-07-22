@@ -1,8 +1,6 @@
 exports.run = (client, guild) => {
   const logMessage = `GUARDIAN has joined a new guild: ${guild.name} [ ${guild.id} ]`;
-  client.funcs.log(`${logMessage}`, 'logMessage');
-
-  client.funcs.write_log(`${logMessage}`);
+  client.funcs.log(`${logMessage}`, 'log');
 
   const guildConfigs = client.guildConfs.get(guild.id);
   guildConfigs.addKey('deleteCommand', 'true', 'Boolean');
@@ -15,4 +13,7 @@ exports.run = (client, guild) => {
   guildConfigs.addKey('role_trusted', 'Verified', 'String');
   guildConfigs.addKey('greeting_enabled', 'false', 'String');
   guildConfigs.addKey('exit_message', 'true', 'String');
+
+  const logDir = client.guildConfs.get(guild.id).logDir.data;
+  client.funcs.write_log(client, logDir, guild.id, logMessage);
 };

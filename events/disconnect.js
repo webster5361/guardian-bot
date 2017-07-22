@@ -1,3 +1,3 @@
 exports.run = (client, event) => {
-  console.log('disconnected');
+  console.log(`Disconnected: ${event}`);
 };

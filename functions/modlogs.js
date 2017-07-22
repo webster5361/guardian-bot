@@ -71,8 +71,14 @@ exports.post = async (client, guild, content) => {
     try {
       const log = await modLog.fetchMessages({ limit: 1 });
       const lastMessage = log.first();
-      chkContent = (lastMessage.embeds && lastMessage.embeds.length > 0) ? lastMessage.embeds[0].title : lastMessage.content;
-      lastMessageID = chkContent.match(/Case #(\d+)/i)[1];
+      // chkContent = (lastMessage.embeds && lastMessage.embeds.length > 0) ? lastMessage.embeds[0].title : lastMessage.content;
+      // lastMessageID = chkContent.match(/Case #(\d+)/i)[1];
+      if (!lastMessage) {
+        lastMessageID = 0;
+      } else {
+        chkContent = (lastMessage.embeds && lastMessage.embeds.length > 0) ? lastMessage.embeds[0].title : lastMessage.content;
+        lastMessageID = chkContent.match(/Case #(\d+)/i)[1];
+      }
     } catch (err) { console.log(err); }
 
     try {

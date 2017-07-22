@@ -14,15 +14,20 @@ exports.run = (client, msg, [member, ...reason]) => {
       const caseNum = data.caseNum;
       let lastMessageID = 0;
       let chkContent = '';
+      let messageID = 0;
 
       try {
         modLog.fetchMessages({ limit: 1 })
           .then((result) => {
             const lastMessage = result.first();
-            chkContent = (lastMessage.embeds && lastMessage.embeds.length > 0) ? lastMessage.embeds[0].title : lastMessage.content;
-            lastMessageID = chkContent.match(/Case #(\d+)/i)[1];
-            let messageID = parseInt(lastMessageID);
-            messageID += 1;
+            if (!lastMessage) {
+              messageID = 1;
+            } else {
+              chkContent = (lastMessage.embeds && lastMessage.embeds.length > 0) ? lastMessage.embeds[0].title : lastMessage.content;
+              lastMessageID = chkContent.match(/Case #(\d+)/i)[1];
+              messageID = parseInt(lastMessageID);
+              messageID += 1;
+            }
             const logger = `CASE# ${messageID} :: ${targetTag} [ ${targetID} ] has been unbanned by ${msg.author.username} [ ${msg.author.id} ] in the ${msg.guild.name} for the following reason: ${reason}. -- REFERENCE [ Case #${caseNum} ]`;
             const logDir = client.guildConfs.get(msg.guild.id).logDir.data;
             client.funcs.write_log(client, logDir, msg.guild.id, logger);

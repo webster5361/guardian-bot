@@ -1,5 +1,6 @@
 exports.run = (client, member) => {
   // If exit message is enabled, say goodbye to the member
+  if (member.id === '336504595050397696') return;
   if (client.guildConfs.get(member.guild.id).exit_message.data) {
     member.guild.defaultChannel.send(`${member.user.tag} has left the server...`);
   }
@@ -12,8 +13,8 @@ exports.run = (client, member) => {
     .setColor(color)
     .setAuthor(`${member.user.tag} (${member.id})`, member.user.displayAvatarURL)
     .setTimestamp()
-    .setFooter('User left')
+    .setFooter('User left');
 
-  const channel_memberLog = member.guild.channels.find('name', client.guildConfs.get(member.guild.id).channel_memberLog.data);
-  channel_memberLog.send({ embed });
+  const channelMemberLog = member.guild.channels.find('name', client.guildConfs.get(member.guild.id).channel_memberLog.data);
+  channelMemberLog.send({ embed });
 };

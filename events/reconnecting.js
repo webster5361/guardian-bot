@@ -1,3 +1,3 @@
-exports.run = (client) => {
+exports.run = () => {
   console.log('reconnecting');
 };
