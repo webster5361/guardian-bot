@@ -8,6 +8,11 @@
 [![Build Status](https://travis-ci.org/Odinthewanderer/guardian-bot.svg?branch=master)](https://travis-ci.org/Odinthewanderer/guardian-bot)
 [![NSP Status](https://nodesecurity.io/orgs/odin/projects/a7ece1c5-7ea3-47b3-9bd1-684177576ef0/badge)](https://nodesecurity.io/orgs/odin/projects/a7ece1c5-7ea3-47b3-9bd1-684177576ef0)
 
+# Special Thanks
+This bot is based on the Komada framework. A special thanks to York and Evie for the help and the amazing work on this framework.
+[YorkAARGH](https://github.com/YorkAARGH)
+[<evie.codes>](https://github.com/eslachance)
+
 # Installation
 
 After you clone the repository, you can install your dependencies like this:
