@@ -10,7 +10,9 @@
 
 # Special Thanks
 This bot is based on the Komada framework. A special thanks to York and Evie for the help and the amazing work on this framework.
+
 [YorkAARGH](https://github.com/YorkAARGH)
+
 [<evie.codes>](https://github.com/eslachance)
 
 # Installation
