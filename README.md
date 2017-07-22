@@ -15,3 +15,8 @@ After you clone the repository, you can install your dependencies like this:
 ```bash
 npm install
 ```
+After your repositories are installed:
+```bash
+cp lib/config.json.example lib/config.json
+```
+Now set up your config.json file as you see fit.
