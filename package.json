@@ -18,7 +18,7 @@
   "homepage": "https://github.com/Odinthewanderer/guardian-bot#readme",
   "dependencies": {
     "chalk": "^2.0.1",
-    "dateformat": "^2.0.0",
+    "dateformat": "^3.0.3",
     "fs-nextra": "^0.2.0",
     "komada": "^0.19.7",
     "mkdirp": "^0.5.1",
