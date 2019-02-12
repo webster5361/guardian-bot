@@ -19,7 +19,7 @@
   "dependencies": {
     "chalk": "^2.0.1",
     "dateformat": "^2.0.0",
-    "fs-nextra": "^0.2.0",
+    "fs-nextra": "^0.4.3",
     "komada": "^0.19.7",
     "mkdirp": "^0.5.1",
     "moment": "^2.18.1",
